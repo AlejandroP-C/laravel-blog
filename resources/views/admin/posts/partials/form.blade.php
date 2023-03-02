@@ -60,6 +60,24 @@
     @enderror
 </div>
 
+<div class="row mb-3">
+    <div class="col">
+        <div class="image-wrapper">
+            <img id="picture" src="https://cdn.pixabay.com/photo/2015/12/03/08/50/paper-1074131_960_720.jpg">
+        </div>
+    </div>
+    <div class="col">
+        <div class="form-group">
+            {!! Form::label('file', 'Imagen que se mostrará en el post') !!}
+            {!! Form::file('file', ['class' => 'form-control-file', 'accept' => 'image/*']) !!}
+            @error('file')
+                <span class="text-danger">{{ $message }}</span>
+            @enderror
+        </div>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo dolorem itaque modi beatae consequatur aspernatur soluta corporis, et voluptatem laudantium natus non, aut doloribus asperiores fuga labore totam est vitae?</p>
+    </div>
+</div>
+
 <div class="form-group">
     {!! Form::label('extract', 'Extracto') !!}
     {!! Form::textarea('extract', null, ['class' => 'form-control']) !!}

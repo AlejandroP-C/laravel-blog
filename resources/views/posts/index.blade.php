@@ -6,7 +6,7 @@
 
             @foreach ($posts as $post)
 
-                <article class="w-full h-80 bg-center @if($loop->first) md:col-span-2 @endif" style="background-image: url({{Storage::url($post->image->url)}})" >
+                <article class="w-full h-80 bg-center @if($loop->first) md:col-span-2 @endif" style="background-image: url(@if($post->image) {{Storage::url($post->image->url)}} @else https://cdn.pixabay.com/photo/2015/12/03/08/50/paper-1074131_960_720.jpg @endif)" >
                     <div class="w-full h-full px-8 flex flex-col justify-center">
 
                         <div>
