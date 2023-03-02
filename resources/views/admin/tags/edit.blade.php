@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'Editar categoría')
+@section('title', 'Editar etiqueta')
 
 @section('content_header')
-    <h1>Editar categoría</h1>
+    <h1>Editar etiqueta</h1>
 @stop
 
 @section('content')
@@ -20,11 +20,11 @@
 
         <div class="card-body">
 
-            {!! Form::model($category, ['route' => ['admin.categories.update', $category], 'method' => 'put']) !!}
+            {!! Form::model($tag, ['route' => ['admin.tags.update', $tag], 'method' => 'put']) !!}
 
-            @include('admin.categories.partials.form')
+                @include('admin.tags.partials.form')
 
-            {!! Form::submit('Actualizar categoria', ['class' => 'btn btn-primary']) !!}
+                {!! Form::submit('Actualizar etiqueta', ['class' => 'btn btn-primary']) !!}
 
             {!! Form::close() !!}
 

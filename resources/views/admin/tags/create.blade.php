@@ -1,30 +1,21 @@
 @extends('adminlte::page')
 
-@section('title', 'Editar categoría')
+@section('title', 'Nueva etiqueta')
 
 @section('content_header')
-    <h1>Editar categoría</h1>
+    <h1>Crear nueva etiqueta</h1>
 @stop
 
 @section('content')
-
-    @if (session('info'))
-
-        <div class="alert alert-success">
-            <strong>{{session('info')}}</strong>
-        </div>
-        
-    @endif
-
     <div class="card">
 
         <div class="card-body">
 
-            {!! Form::model($category, ['route' => ['admin.categories.update', $category], 'method' => 'put']) !!}
+            {!! Form::open(['route' => 'admin.tags.store']) !!}
 
-            @include('admin.categories.partials.form')
+                @include('admin.tags.partials.form')
 
-            {!! Form::submit('Actualizar categoria', ['class' => 'btn btn-primary']) !!}
+                {!! Form::submit('Crear etiqueta', ['class' => 'btn btn-primary']) !!}
 
             {!! Form::close() !!}
 
@@ -32,7 +23,6 @@
 
     </div>
 @stop
-
 
 @section('js')
 
