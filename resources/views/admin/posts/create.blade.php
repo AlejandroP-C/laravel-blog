@@ -11,7 +11,7 @@
 
         <div class="card-body">
 
-            {!! Form::open(['route' => 'admin.posts.store']) !!}
+            {!! Form::open(['route' => 'admin.posts.store', 'autocomplete' => 'off']) !!}
 
                 @include('admin.posts.partials.form')
 

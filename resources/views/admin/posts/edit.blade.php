@@ -8,7 +8,7 @@
 
 @section('content')
 
-    @if (session('info'))
+    {{-- @if (session('info'))
 
         <div class="alert alert-success">
             <strong>{{session('info')}}</strong>
@@ -30,7 +30,7 @@
 
         </div>
 
-    </div>
+    </div> --}}
 @stop
 
 
