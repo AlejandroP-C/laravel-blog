@@ -27,6 +27,7 @@
 @section('js')
 
     <script src="{{asset('vendor/jQuery-Plugin-stringToSlug-1.3/jquery.stringToSlug.min.js')}}"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/36.0.1/classic/ckeditor.js"></script>
 
     <script>
         $(document).ready( function() {
@@ -36,6 +37,16 @@
                 space: '-'
             });
         });
+        ClassicEditor
+        .create( document.querySelector( '#extract' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+        ClassicEditor
+        .create( document.querySelector( '#body' ) )
+        .catch( error => {
+            console.error( error );
+        } );
     </script>
 
 @endsection

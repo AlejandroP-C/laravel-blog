@@ -2,7 +2,6 @@
 
     <div class="card-header">
         <input wire:model="search" class="form-control" placeholder="Ingrese el nombre de un post">
-        {{-- <a href="{{route('admin.posts.create')}}"><x-eos-add-circle-o style="color: #198754; width: 32px;" /></a> --}}
     </div>
 
     @if ($posts->count())
