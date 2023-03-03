@@ -16,9 +16,11 @@
 
     <div class="card">
 
-        <div class="card-header">
-            <a href="{{route('admin.tags.create')}}"><x-eos-add-circle-o style="color: #198754; width: 32px;" /></a>
-        </div>
+        @can('admin.tags.create')
+            <div class="card-header">
+                <a href="{{route('admin.tags.create')}}"><x-eos-add-circle-o style="color: #198754; width: 32px;" /></a>
+            </div>
+        @endcan
 
         <div class="card-body">
             <table class="table table-striped">
@@ -34,23 +36,29 @@
                         <tr>
                             <td>{{$tag->id}}</td>
                             <td>{{$tag->name}}</td>
-                            <td width="25px"><a href="{{route('admin.tags.edit', $tag)}}"><x-feathericon-edit style="color: orange" /></td>
                             <td width="25px">
-                                <form action="{{route('admin.tags.destroy', $tag)}}" method="post">
-                                    @csrf
-                                    @method('delete')
-                                    <button type="submit" style="
-                                        background-color: transparent;
-                                        border-width: 0;
-                                        font-family: inherit;
-                                        font-size: inherit;
-                                        font-style: inherit;
-                                        font-weight: inherit;
-                                        line-height: inherit;
-                                        padding: 0;">
-                                        <x-eos-delete style="width: 24px; color: red" ></x-eos-delete>
-                                    </button>
-                                </form>
+                                @can('admin.tags.edit')
+                                    <a href="{{route('admin.tags.edit', $tag)}}"><x-feathericon-edit style="color: orange" />
+                                @endcan
+                            </td>
+                            <td width="25px">
+                                @can('admin.categories.destroy')
+                                    <form action="{{route('admin.tags.destroy', $tag)}}" method="post">
+                                        @csrf
+                                        @method('delete')
+                                        <button type="submit" style="
+                                            background-color: transparent;
+                                            border-width: 0;
+                                            font-family: inherit;
+                                            font-size: inherit;
+                                            font-style: inherit;
+                                            font-weight: inherit;
+                                            line-height: inherit;
+                                            padding: 0;">
+                                            <x-eos-delete style="width: 24px; color: red" ></x-eos-delete>
+                                        </button>
+                                    </form>
+                                @endcan
                             </td>
                         </tr>
                     @endforeach
