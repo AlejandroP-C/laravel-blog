@@ -307,6 +307,11 @@ return [
             'route'       => 'admin.home',
             'icon'        => 'fas fa-tachometer-alt fa-fw'
         ],
+        [
+            'text'        => 'Usuarios',
+            'route'       => 'admin.users.index',
+            'icon'        => 'fas fa-users fa-fw'
+        ],
         ['header' => 'ADMINISTRADOR'],
         [
             'text' => 'Categorías',
@@ -328,7 +333,7 @@ return [
 
         ],
         [
-            'text'       => 'Crear nuevo post',
+            'text' => 'Crear nuevo post',
             'route' => 'admin.posts.create',
             'icon' => 'fas fa-fw fa-file',
 
