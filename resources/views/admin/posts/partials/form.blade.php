@@ -1,5 +1,3 @@
-{!! Form::hidden('user_id', auth()->user()->id) !!}
-
 <div class="form-group">
     {!! Form::label('name', 'Nombre') !!}
     {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Ingrese el nombre del post']) !!}
@@ -63,7 +61,11 @@
 <div class="row mb-3">
     <div class="col">
         <div class="image-wrapper">
-            <img id="picture" src="https://cdn.pixabay.com/photo/2015/12/03/08/50/paper-1074131_960_720.jpg">
+            @isset ($post->image)
+                <img id="picture" src="{{Storage::url($post->image->url)}}" >
+            @else
+                <img id="picture" src="https://cdn.pixabay.com/photo/2015/12/03/08/50/paper-1074131_960_720.jpg">
+            @endisset
         </div>
     </div>
     <div class="col">
